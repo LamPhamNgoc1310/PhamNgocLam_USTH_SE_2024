@@ -1,5 +1,6 @@
 package kengine;
 
+import java.io.*;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Vector;
@@ -237,9 +238,23 @@ public class Query {
       sb.append(matches.toString());
     }
     
-    if (sb.length() > 0) 
+    if (sb.length() > 0) {
       return sb.toString();
-    else
+    }
+    else {
       return null;
+    }
   } 
+  /**
+   * @effects
+   * 	return an <code> Iterator </code>
+   * 		
+   * 
+   */
+  public String matchIterator(Array) {
+	  if (keys.equals(matches)) {
+		  return matches;
+	  }
+	  return null;
+  }
 }

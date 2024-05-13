@@ -123,18 +123,6 @@ public class Student implements Comparable<Student>, Document {
 				id, name, phoneNumber, address);
 	}
 	
-	// iterator
-	
-	/**
-	 * @effect
-	 * 	<pre>
-	 * 	return Iterator if the query matches
-	 */
-	
-	public boolean matchIterator(String iterator) {
-		return true;
-	}
-	
 	// setters
 	/**
 	 * @modifies this.name

@@ -1,7 +1,7 @@
 package a2_22bi13240.studentman;
 
 import utils.*;
-import kengine.*;
+import a2_22bi13240.kengine.*;
 
 /**
  * @overview A student represents a person who is currently studying in a
@@ -19,6 +19,7 @@ import kengine.*;
  *                      length(address) = ADDRESS_LEN /\
  * 
  * @author lampham_1310
+ * https://github.com/LamPhamNgoc1310/PhamNgocLam_USTH_SE_2024
  */
 public class Student implements Comparable<Student>, Document {
 	private static final double MIN_ID = 1;

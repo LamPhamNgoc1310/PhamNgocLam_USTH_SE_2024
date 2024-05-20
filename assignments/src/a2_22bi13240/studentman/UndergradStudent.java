@@ -1,7 +1,7 @@
 package a2_22bi13240.studentman;
 
 import utils.*;
-import kengine.*;
+import a2_22bi13240.kengine.*;
 
 /**
  * @overview UndergradStudent represents a person in a university's course
@@ -15,7 +15,7 @@ import kengine.*;
  *                      = address /\
  * 
  * @author lampham_1310
- * 
+ * https://github.com/LamPhamNgoc1310/PhamNgocLam_USTH_SE_2024
  */
 
 public class UndergradStudent extends Student {

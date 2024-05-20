@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-import kengine.Doc;
-import kengine.DocCnt;
-import kengine.Engine;
-import kengine.Query;
+import a2_22bi13240.kengine.Doc;
+import a2_22bi13240.kengine.DocCnt;
+import a2_22bi13240.kengine.Engine;
+import a2_22bi13240.kengine.Query;
 import utils.DomainConstraint;
 import utils.NotPossibleException;
 
@@ -407,7 +407,7 @@ public class ProgStudentMan {
 		  throw new NotPossibleException("ProgStudentMan.createStudent: The format for Student is incorrect!");
 	  }
 	  
-	  int id = (Integer) data[0];
+	  int id = (int) data[0];
 	  String name = (String) data[1];
 	  String phone = (String) data[2];
 	  String address = (String) data[3];
@@ -427,7 +427,7 @@ public class ProgStudentMan {
 	  if (data.length != 4) {
 		  throw new NotPossibleException("ProgStudentMan.createUndergradStudent: The format for UndergradStudent object is incorrect!");
 	  }
-	  int id = (Integer) data[0];
+	  int id = (int) data[0];
 	  String name = (String) data[1];
 	  String phone = (String) data[2];
 	  String address = (String) data[3];
@@ -447,11 +447,11 @@ public class ProgStudentMan {
 	  if (data.length != 5) {
 		  throw new NotPossibleException("ProgStudentMan.createPostgradStudent: The format for UndergradStudent object is incorrect!");
 	  }
-	  int id = (Integer) data[0];
+	  int id = (int) data[0];
 	  String name = (String) data[1];
 	  String phone = (String) data[2];
 	  String address = (String) data[3];
-	  double gpa = (Double) data[4];
+	  float gpa = (float) data[4];
 	  return new PostgradStudent(id, name, phone, address, gpa);
   }
   
@@ -461,8 +461,8 @@ public class ProgStudentMan {
    *   add to this.engine a Doc object created from c.toHtmlDoc
    */
   public void addStudent(Student c) {
-	  objects.add(c);
-	  engine.addDocs(c.toHtmlDoc());
+	  this.objects.add(c);
+	  this.engine.addDoc(new Doc(c.toHtmlDoc()));
   }
   
   /**

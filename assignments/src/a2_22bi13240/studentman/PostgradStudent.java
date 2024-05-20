@@ -1,7 +1,7 @@
 package a2_22bi13240.studentman;
 
 import utils.*;
-import kengine.*;
+import a2_22bi13240.kengine.*;
 
 /**
  * @overview A PostgradStudent represents a person who has finished their
@@ -19,6 +19,7 @@ import kengine.*;
  *                      false /\ min(gpa) = MIN_GPA /\ max(gpa) = MAX_GPA /\
  * 
  * @author lampham_1310
+ * https://github.com/LamPhamNgoc1310/PhamNgocLam_USTH_SE_2024
  */
 public class PostgradStudent extends Student {
 
@@ -27,7 +28,7 @@ public class PostgradStudent extends Student {
 	private static final int MIN_ID = (int) (1e8 + 1);
 	private static final int MAX_ID = (int) 1e9;
 	@DomainConstraint(mutable = true, optional = false, min = MIN_GPA, max = MAX_GPA)
-	private double gpa;
+	private float gpa;
 
 	/**
 	 * 
@@ -43,7 +44,7 @@ public class PostgradStudent extends Student {
 	 *          </pre>
 	 */
 	public PostgradStudent(@AttrRef("id") int id, @AttrRef("name") String name,
-			@AttrRef("phoneNumber") String phoneNumber, @AttrRef("address") String address, @AttrRef("gpa") double gpa)
+			@AttrRef("phoneNumber") String phoneNumber, @AttrRef("address") String address, @AttrRef("gpa") float gpa)
 			throws NotPossibleException {
 
 		super(id, name, phoneNumber, address);
@@ -82,7 +83,7 @@ public class PostgradStudent extends Student {
 	 */
 	@DOpt(type = OptType.Mutator)
 	@AttrRef("gpa")
-	public boolean setGpA(double gpa) {
+	public boolean setGpA(float gpa) {
 		if (validateGpa(gpa)) {
 			this.gpa = gpa;
 			return true;
@@ -166,7 +167,7 @@ public class PostgradStudent extends Student {
 	@DOpt(type = OptType.Default)
 	public String toHtmlDoc() {
 		return String.format(
-				"<html>\n<head><title>Student: %d - %s</title></head>\n<body>\n%d %s %s %s %f\n</body></html>", 
+				"<html>\n<head><title>Student: %d - %s</title></head>\n<body>\n%d %s %s %s %.2f\n</body></html>", 
 				id, name.trim(), id, name.trim(), phoneNumber.trim(), address.trim(), gpa);
 	}
 }
